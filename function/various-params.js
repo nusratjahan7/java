@@ -39,7 +39,7 @@ console.log(doubleOrTripple(5, false));
 
 function numberOfElements(numbers){
     const len = numbers.length;
-    return len;
+    return len; 
 }
 
 console.log(numberOfElements([12, 445, 43, 65, 67]));
