@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom events</title>
+    <style>
+        .comment{
+            border: 2px solid blue;
+            background-color: lightblue;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM events</h1>
+    <!-- 1 -->
+    <button id="btn-yellow">Make yellow</button>
+
+    <!-- 2 -->
+     <button id="btn-blue">Make Blue</button>
+
+     <!-- 3 -->
+      <h1 id="title-1">Hi there</h1>
+      <button id="btn-update">Update</button>
+
+      <!-- 4 -->
+       <p id="user-info">NO user</p>
+       <button id="btn-login">Login</button>
+
+       <!-- 5 -->
+        <p id="name">No Name</p>
+        <input type="text" id="input-p" placeholder="Your Name">
+        <button id="btn-p">Update</button>
+
+        <!-- 6 -->
+         <section>
+            <h2>All comments</h2>
+            <div id="comment-container">
+            <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quod quas autem vel eos deserunt ratione facilis labore voluptatibus ut totam magnam provident optio ab, minima repellendus placeat in aperiam?</p>
+            
+            <p class="comment">Fugiat eligendi voluptates impedit illum aut voluptas maxime illo enim explicabo adipisci non nemo voluptate atque a corrupti iste possimus unde nostrum quidem, recusandae laboriosam aliquam error distinctio eos. Animi?</p>
+            
+            <p class="comment">Ea eaque molestias officia. Dolorem quas, ut nihil ipsa veritatis dicta molestiae distinctio vero voluptatum accusantium deleniti repudiandae voluptate. Voluptas odit autem labore debitis, praesentium aut corporis tempore eaque delectus!</p>
+
+            </div>
+            <textarea name="" id="comment-box" cols="60" rows="5"></textarea>
+            <button id="btn-post">Post Comment</button>
+         </section>
+    <script>
+        // 1
+        document.getElementById('btn-yellow')
+        .addEventListener('click', function(){
+            document.body.style.backgroundColor = 'yellow';
+        })
+        // 2
+        document.getElementById('btn-blue')
+        .addEventListener('click', function(){
+            document.body.style.color = 'blue';
+        })
+        // 3
+        document.getElementById('btn-update')
+        .addEventListener('click', function(){
+            const titleText = document.getElementById('title-1');
+            titleText.innerText = 'hi im here';
+        })
+        // 4
+        document.getElementById('btn-login')
+        .addEventListener('click', function(){
+            const userInfo = document.getElementById('user-info');
+            userInfo.innerText = 'use login successfully.'
+        })
+
+        // 5
+        document.getElementById('btn-p')
+        .addEventListener('click', function(){
+            const nameInput = document.getElementById('input-p');
+            const name = nameInput.value;
+            const nameP = document.getElementById('name');
+            nameP.innerText = name;
+        })
+        // 6
+        document.getElementById('btn-post') // “Post Comment” বাটনটা খুঁজে বের করে
+        .addEventListener('click', function(){ // যখন কেউ বাটনে ক্লিক করবে, তখন ভেতরের কোড চালু হবে
+            const commentBox = document.getElementById('comment-box');
+            const newComment = commentBox.value;
+            const commentContainer = document.getElementById('comment-container');
+            const commentElement = document.createElement('p');
+            commentElement.classList.add('comment');
+            commentElement.innerText = newComment;
+            commentContainer.appendChild(commentElement);
+            commentBox.value = ' ';
+        })
+    </script>
+
+</body>
+</html>
