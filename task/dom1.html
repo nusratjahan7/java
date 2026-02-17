@@ -47,8 +47,13 @@
 
             </div>
             <textarea name="" id="comment-box" cols="60" rows="5"></textarea>
-            <button id="btn-post">Post Comment</button>
+            <button id="btn-post">Post Comment</button>           
          </section>
+
+         <!-- 7 -->
+        <p id="roll">0</p>
+        <input type="number"  placeholder="your roll" id="enter-roll">
+        <button id="btn-roll">Submit</button>
     <script>
         // 1
         document.getElementById('btn-yellow')
@@ -92,6 +97,15 @@
             commentElement.innerText = newComment;
             commentContainer.appendChild(commentElement);
             commentBox.value = ' ';
+        })
+        // 7 
+        document.getElementById('btn-roll')
+        .addEventListener('click', function(){
+            const rollInput = document.getElementById('enter-roll');
+            const rollN = rollInput.value;
+            const rollP = document.getElementById('roll');
+            rollP.innerText = rollN;     
+            rollInput.value = "";
         })
     </script>
 
