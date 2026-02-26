@@ -1,0 +1,9 @@
+.product-cart{
+    border: 1px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+.products{
+    display: flex;
+    gap: 5px;
+}

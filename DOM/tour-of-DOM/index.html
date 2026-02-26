@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1, h2{
+            color: brown;
+        }
+        #food-title{
+            color: blue;
+        }
+        .food .foreign{
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>This is my header no banner</h1>
+    </header>
+    <main id="main-contaianer">
+       <section class="songs" id="old-dhaka">
+         <h1>Welcome to my DOM</h1>
+         <p>Lorem ipsum dolor <span>sit amet</span> consectetur adipisicing elit. Rem animi fugiat odit ex neque non?</p>
+        <ul>
+            <h1>Lorem <span>ipsum dolor</span> sit amet.</h1>
+            <li>Shafayet</li>
+            <li class="foreign">Bonobash</li>
+            <li id="band">Jalali Set</li>
+            <li id="international">Dubai</li>
+            <li>dom dom</li>
+        </ul>
+       </section>
+       <section class="food">
+        <h1 id="food-title">
+            Foods i love
+        </h1>
+        <ul>
+            <li>Rice</li>
+            <li>Potato</li>
+            <li>Fish</li>
+            <li class="foreign">Lentils</li>
+            <li class="foreign">Burger</li>
+           <li>Pizza</li>
+        </ul>
+        </section>
+        <section id="players-container">
+            <h2>Players</h2>
+            <ul id="player-list">
+                <li>Messi</li>
+                <li>Pele</li>
+                <li>Ronaldo</li>
+                <li>Embape</li>
+            </ul>
+        </section>
+    </main>
+    <!-- JavaScript  -->
+     <script>
+    //    console.log('Hello from JavaScript');
+    //    console.log('Hello bole chole gelo');
+    //    console.log('Document Object Model');
+    const student = {
+        name: 'Abul Mia',
+        id: 121,
+        study: function (subject){
+            console.log('studing subject', subject);
+        }
+    }
+    // document.getElementsByTagName
+    const liCollection = document.getElementsByTagName('li');
+    // console.log(liCollection);
+    for (const li of liCollection){
+        // console.log(li.innerText);
+    }
+    // all h1 tags
+    const allHeading = document.getElementsByTagName('h1');
+    for (const heading of allHeading){
+        // console.log(heading.innerText);
+    }
+
+    // get by id
+    const foodTitleH1 = document.getElementById('food-title');
+    // console.log(foodTitleH1.innerText);
+     </script>
+     <script src="./js/hello.js"></script>
+</body>
+</html>
